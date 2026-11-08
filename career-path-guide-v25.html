@@ -2,16 +2,7 @@
 <html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
- <!-- 1. 網頁與社群標題 -->
-    <title>職涯路線導覽</title>
-    <meta property="og:title" content="職涯路線導覽">
-    <meta property="og:site_name" content="職涯路線導覽">
-    <meta name="twitter:title" content="職涯路線導覽">
-
-    <!-- 2. 下方小字內容（修改 content 裡面的文字） -->
-    <meta name="description" content="提供9種可能，3個方向，每一步都算數。">
-    <meta property="og:description" content="提供9種可能，3個方向，每一步都算數。">
-    <meta name="twitter:description" content="提供9種可能，3個方向，每一步都算數。">
+<title>職涯路線導覽</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@600;800&family=Iansui&display=swap">
 <style>
 :root{color-scheme:dark;--bg:#2a2535;--dk:#4a4458;--cream:#FFF8F3;--pink:#FFB7B2;--butter:#FFE5B4;--mint:#B5EAD7;--blue:#C7CEEA;--lav:#E2D4F5;--peach:#FFDAC1;--sky:#CDEBF5;--rose:#F9C6D4;--sage:#D4EBC8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -113,6 +104,7 @@ ol li:last-child:after{display:none}
 .rs{font-size:.95rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin:.2rem 0 1rem;font-weight:700}
 .lnk{border:0;background:none;color:#7b4fa0;font:inherit;font-weight:700;text-decoration:underline;cursor:pointer;padding:.2rem .3rem}
 @media print{body>*:not(#ov){display:none!important}body{background:#fff!important}#ov{position:static!important;display:block!important;background:none!important;padding:0!important}.pw{max-width:none}.pn{max-height:none!important;overflow:visible!important;box-shadow:none!important;animation:none!important}.pf,.x,.mup,.up{display:none!important}}
+@media(max-width:600px){.mac{display:none}.hero h1{font-size:1.9rem}.hero p{font-size:.95rem}.w{padding-left:1rem;padding-right:1rem}h2{font-size:1.5rem}.chips{gap:.4rem;margin-bottom:.8rem}.chips button{padding:.25rem .8rem;font-size:.8rem}.rs{font-size:.8rem}.grid{grid-template-columns:1fr;gap:.6rem}.card{display:grid;grid-template-columns:auto 1fr;column-gap:.7rem;row-gap:.15rem;min-height:0;padding:.75rem .95rem;border-radius:1.3rem;align-content:start;box-shadow:inset 0 -4px 0 rgba(0,0,0,.07),inset 0 4px 8px rgba(255,255,255,.75),0 6px 12px rgba(120,90,130,.22)}.card>*{grid-column:2}.card .n{grid-column:1;grid-row:1/span 4;width:1.9rem;height:1.9rem;font-size:.7rem;align-self:start}.card h3{margin:0;font-size:1.05rem}.card p{font-size:.78rem;line-height:1.45}.tag{font-size:.7rem;padding:.02rem .6rem;margin-top:.2rem}.card .dp{font-size:.7rem}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style></head><body>
 
@@ -121,10 +113,10 @@ ol li:last-child:after{display:none}
 <div class="fs"><span>字體大小</span><button data-s="-2" aria-label="縮小字體">A−</button><button data-s="0" aria-label="預設字體">A</button><button data-s="4" aria-label="放大字體">A＋</button></div>
 <div class="clay" style="width:7rem;height:7rem;right:30%;top:7rem;background:radial-gradient(circle at 30% 30%,#fff,#C7CEEA);animation-delay:-3s"></div>
 <svg class="mac" viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="148" rx="70" ry="7" fill="rgba(90,60,110,.15)"/><path d="M25 80a75 48 0 0 1 150 0z" fill="#FFB7B2"/><rect x="22" y="78" width="156" height="16" rx="8" fill="#FFF8F3"/><path d="M25 94h150a75 48 0 0 1-150 0z" fill="#B5EAD7"/><circle cx="78" cy="56" r="6" fill="#4a4458"/><circle cx="122" cy="56" r="6" fill="#4a4458"/><path d="M90 66q10 9 20 0" stroke="#4a4458" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="62" cy="68" r="7" fill="#fff" opacity=".6"/><circle cx="138" cy="68" r="7" fill="#fff" opacity=".6"/></svg>
-<h1>找到適合你的<br>下一步 ✨</h1><p>你不需要立刻給出答案。這裡整理了幾種不同的可能性，有些能讓你馬上動手嘗試，有些先有個概念就好。只要你願意跨出第一步，走過的每一步都算數。</p><a class="btn" href="#routes">慢慢看看</a></header>
+<h1>找到適合你的<br>下一步 ✨</h1><p>你不需要現在就決定。這裡整理了幾種不同的可能,有些可以馬上試試,有些只是認識一下。不用從第一張開始看,也不用全部看完。</p><a class="btn" href="#routes">慢慢看看</a></header>
 <div class="w stats" id="stats"></div>
 
-<section id="routes"><div class="w"><h2>先選一個方向</h2><p class="lead">點一張,符合的路線會標出來,其他變淡但不會消失。</p><div class="dirs" id="dirs"></div><h3 class="sub">想要的成果(可以再縮小範圍)</h3><div class="chips" id="chips"></div><div class="rs" id="rs" aria-live="polite"><span id="cnt"></span><button class="lnk" id="clr" hidden>清除選擇</button></div><div class="grid" id="grid"></div></div></section>
+<section id="routes"><div class="w"><h2>你想要什麼成果?</h2><p class="lead">點一個,符合的路線會排到最前面,其他變淡但不會消失。</p><div class="chips" id="chips"></div><div class="rs" id="rs" aria-live="polite"><span id="cnt"></span><button class="lnk" id="clr" hidden>清除選擇</button></div><div class="grid" id="grid"></div></div></section>
 <section id="compare"><div class="w"><h2>路線比較</h2><p class="lead">一張表看懂差異。</p><div class="tw"><table id="tb"><thead><tr><th>路線</th><th>取得成果</th><th>所需時間</th><th>主要前提</th><th>能和現在的生活並行嗎?(我的整理)</th></tr></thead><tbody></tbody></table></div><p class="nt">比較表是各路線內容的摘要,出處請看各路線詳細頁的「佐證資料」。</p></div><div style="height:2.4rem"></div></section>
 </div>
 <footer>資料查詢日期:2026/11/07。法規、招生與費用,請以各官方單位公告為準。<br>需要支持時,可撥打 1925 安心專線(24 小時免費)。</footer>
@@ -216,9 +208,8 @@ var $=function(s){return document.querySelector(s)},cur=0,LF=null;
 var CR;function rf(x){return x.replace(/〔([\d,]+)〕/g,function(m,n){return n.split(',').map(function(i){var k=CR.l[i-1];return '<a class="rf" href="'+k[1]+'" target="_blank" rel="noopener">['+i+']</a>'}).join('')})}
 function sec(t,h){return '<details class="dt"><summary>'+t+'</summary><div class="db">'+h+'</div></details>'}
 function ul(a,o){return '<'+(o||'ul')+'>'+a.map(function(x){return '<li>'+rf(x)+'</li>'}).join('')+'</'+(o||'ul')+'>'}
-var G=[['先穩定下來','維持目前的生活與工作節奏,不用急著做長期決定。',[1,7]],['想繼續學習或累積專業','需要投入時間、學習或取得資格,可以慢慢評估。',[0,2,3,4,6,8]],['先逛逛、探索看看','先認識不同領域,再看要不要投入。',[5,3,8]]];
-var SD=null,SO=null;
-function ok(i){return (SD===null||G[SD][2].indexOf(i)>=0)&&(SO===null||SO==='全部'||R[i].f===SO)}
+var SO=null;
+function ok(i){return (SO===null||SO==='全部'||R[i].f===SO)}
 function vis(){var o=[];R.forEach(function(r,i){if(ok(i))o.push(i)});return o}
 function nav(d){var l=vis();if(!l.length)l=R.map(function(r,i){return i});var p=l.indexOf(cur);if(p<0)p=d>0?-1:0;open(l[(p+d+l.length)%l.length])}
 function cd(i){var r=R[i];return '<button class="card" style="background:var(--'+r.c+')" data-i="'+i+'"><span class="n">0'+(i+1)+'</span><h3>'+r.n+'</h3><p>'+r.t+'</p>'+(r.dp?'<span class="dp">'+r.dp+'</span>':'')+'<span class="tag">適合:'+r.w+'</span></button>'}
@@ -227,26 +218,22 @@ var CARDS=[].slice.call(document.querySelectorAll('.card'));
 
 var REL=['需要補修與實習,時間較固定,先確認再決定','可以,本來就是留白','選修生可以邊工作邊修;全修生要先處理原校學籍','可以(防護員要先有學位)','報考與讀書要另外安排時間;碩士不能取代物治資格','逛逛可以;要走專業得先進入相關系所','訓練期間多為平日白天,要先問能否配合','可以,現在的診所工作就是起點','青年專案要求不是在職勞工,要和現在的工作取捨'];R.forEach(function(r,i){r.rel=REL[i]});
 $('#tb tbody').innerHTML=R.map(function(r,i){return '<tr class="cr" tabindex="0" data-i="'+i+'"><td>0'+(i+1)+' '+r.n+'</td><td data-l="取得成果">'+r.x+'</td><td data-l="所需時間">'+r.tm+'</td><td data-l="主要前提">'+r.p+'</td><td data-l="能並行嗎">'+r.rel+'</td></tr>'}).join('');
-$('#stats').innerHTML=[[9,'種可能'],[3,'個方向'],['每一步','都算數']].map(function(s){return '<div class="st">'+(typeof s[0]==='number'?'<b data-n="'+s[0]+'">0</b>':'<b>'+s[0]+'</b>')+'<span>'+s[1]+'</span></div>'}).join('');
+$('#stats').innerHTML=[[9,'種可能'],[5,'種成果'],['每一步','都算數']].map(function(s){return '<div class="st">'+(typeof s[0]==='number'?'<b data-n="'+s[0]+'">0</b>':'<b>'+s[0]+'</b>')+'<span>'+s[1]+'</span></div>'}).join('');
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);var t=e.target;if(t.dataset.n){var n=+t.dataset.n,s=0,id=setInterval(function(){s+=Math.ceil(n/40);if(s>=n){s=n;clearInterval(id)}t.textContent=s.toLocaleString()},30)}else setTimeout(function(){t.classList.add('sh')},(+t.dataset.i%4)*90)})},{threshold:.2});
 document.querySelectorAll('.card,[data-n]').forEach(function(e){io.observe(e)});
-var F=['全部','證照','學位','休息','探索','工作'],FL={全部:'全部',證照:'想拿證照',學位:'想拿學位',休息:'想先休息',探索:'想探索看看',工作:'想先找工作'},DC=['mint','lav','peach'],GL=['rgba(90,215,175,.85)','rgba(165,130,235,.85)','rgba(255,160,120,.85)'];
-$('#dirs').innerHTML=G.map(function(g,gi){return '<button class="dir" aria-pressed="false" data-g="'+gi+'" style="background:var(--'+DC[gi]+');--gl:'+GL[gi]+'"><h3>'+g[0]+'</h3><p>'+g[1]+'</p></button>'}).join('');
+var F=['全部','證照','學位','休息','探索','工作'],FL={全部:'全部',證照:'想拿證照',學位:'想拿學位',休息:'想先休息',探索:'想探索看看',工作:'想先找工作'},DC=0;
 $('#chips').innerHTML=F.map(function(f){return '<button aria-pressed="false">'+FL[f]+'</button>'}).join('');
-function upd(sc,init){var any=SD!==null||SO!==null,n=0;if(!init)CARDS.forEach(function(c){c.classList.add('sh')});
-[].forEach.call($('#dirs').children,function(b,i){b.classList.toggle('on',SD===i);b.setAttribute('aria-pressed',SD===i?'true':'false')});
+function upd(sc,init){var any=SO!==null,n=0;if(!init)CARDS.forEach(function(c){c.classList.add('sh')});
 [].forEach.call($('#chips').children,function(b,i){b.classList.toggle('on',SO===F[i]);b.setAttribute('aria-pressed',SO===F[i]?'true':'false')});
 var pos=CARDS.map(function(c){return[c.offsetLeft,c.offsetTop]});
 CARDS.forEach(function(c){var m=ok(+c.dataset.i);if(m)n++;c.classList.toggle('dim',any&&!m)});
 CARDS.slice().sort(function(a,b){return(ok(+a.dataset.i)?0:1)-(ok(+b.dataset.i)?0:1)||a.dataset.i-b.dataset.i}).forEach(function(c){$('#grid').appendChild(c)});
-$('#dirs').classList.toggle('has',SD!==null);
 if(!matchMedia('(prefers-reduced-motion:reduce)').matches)CARDS.forEach(function(c,k){var dx=pos[k][0]-c.offsetLeft,dy=pos[k][1]-c.offsetTop;if((dx||dy)&&c.animate)c.animate({translate:[dx+'px '+dy+'px','0 0']},{duration:480,easing:'cubic-bezier(.2,.8,.2,1)'})});
 $('#cnt').textContent=!any?'':(n?'符合 '+n+' 條,排在最前面':'這個組合沒有符合的路線,換一個試試。');
 $('#clr').hidden=!any;
 if(sc&&any){var t=$('#rs').getBoundingClientRect().top;if(t>innerHeight*.7)window.scrollBy({top:t-innerHeight*.5,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})}}
-$('#dirs').onclick=function(e){var b=e.target.closest('.dir');if(!b)return;var g=+b.dataset.g;SD=SD===g?null:g;upd(SD!==null)};
 $('#chips').onclick=function(e){var b=e.target.closest('button');if(!b)return;var f=F[[].indexOf.call($('#chips').children,b)];SO=SO===f?null:f;upd(SO!==null)};
-$('#clr').onclick=function(){SD=null;SO=null;upd(false)};
+$('#clr').onclick=function(){SO=null;upd(false)};
 upd(false,true);
 function open(i){cur=(i+R.length)%R.length;var r=R[cur];CR=r;if(location.hash!=='#route-'+(cur+1))location.hash='route-'+(cur+1);$('#pn').innerHTML='<div class="ph" style="background:var(--'+r.c+')"><button class="x" aria-label="關閉">×</button><b>0'+(cur+1)+' / 09</b><h3 id="pt">'+r.n+'</h3><p>'+r.d+'</p></div><div class="pb">'+(r.dl?'<p class="dl">⏰ '+r.dl+'</p>':'')+'<h4>適合誰</h4><p style="margin:.2rem 0">'+r.w+'</p><h4>想試試看的最小一步</h4><p style="margin:.2rem 0">'+r.m+'</p><p class="nt">想知道更多,再點開下面的項目;不用一次看完。</p>'+(r.ex?sec(r.exh||'可以看看的方向',ul(r.ex)):'')+sec('步驟',ul(r.st,'ol'))+sec('時間與費用',ul(r.co))+sec('注意事項',ul(r.no))+(r.sp?sec('需要時可以使用的支持資源',ul(r.sp)):'')+(r.l.length?sec('佐證資料(內文的 [編號] 對應這裡)','<div class="lk">'+r.l.map(function(k,i){return '<a href="'+k[1]+'" target="_blank" rel="noopener">['+(i+1)+'] '+k[0]+' ↗</a>'}).join('')+'</div><p class="nt">有 [編號] 的內容都有對應來源;沒有編號的是行動建議或我的整理。部分來源是補習班、診所或新聞整理,請以官方公告為準。</p><details class="how"><summary>連結打不開,或想自己查其他資料?</summary><ul><li>連結失效時:把來源的標題(例如「產業新尖兵計畫」)貼到 Google 搜尋;或把網址刪到只剩網站首頁,再用該網站自己的搜尋框。</li><li>只在某個網站裡搜尋:在 Google 輸入「site:網站 關鍵字」,例如 site:moex.gov.tw 物理治療師 應考資格。</li><li>網址結尾是 .gov.tw 是政府機關、.edu.tw 是學校,優先看這兩種;補習班、部落格、新聞只當線索。</li><li>找法規:全國法規資料庫 law.moj.gov.tw(教育部的規定在 edu.law.moe.gov.tw);找考試:考選部 www.moex.gov.tw;找職訓:台灣就業通 www.taiwanjobs.gov.tw;找空大:www.nou.edu.tw。</li><li>查最新資訊:搜尋時加上年度,例如「115 學年度」「2026」,並看公告日期;簡章以各校招生組的公告為準。</li><li>網頁已經消失:到 web.archive.org 貼上舊網址,看有沒有存檔。</li><li>不確定就打電話問承辦單位:問「這個規定現在還有效嗎?」,並記下日期和接聽的人。</li></ul></details>'):'')+'</div><div class="pf"><button class="btn s nv" id="pv" aria-label="上一條路線" title="上一條">◀</button><button class="btn s tg" id="ao" aria-label="全部項目展開" title="全部展開">展開</button><button class="btn s pt" id="pr" aria-label="列印這一條路線" title="列印這一條">🖨️</button><button class="btn s tg" id="ac" aria-label="全部項目收合" title="全部收合">收起</button><button class="btn s nv" id="nx" aria-label="下一條路線" title="下一條">▶</button></div>';
 if(!$('#ov').classList.contains('on'))LF=document.activeElement;$('#ov').classList.add('on');$('#pn').scrollTop=0;try{$('#pn').focus({preventScroll:true})}catch(e){}$('#mup').classList.remove('on');$('#pr').onclick=function(){[].forEach.call(document.querySelectorAll('#pn details'),function(d){d.open=true});window.print()};$('#pn .x').onclick=close;$('#ao').onclick=function(){[].forEach.call(document.querySelectorAll('#pn .dt'),function(d){d.open=true})};$('#ac').onclick=function(){[].forEach.call(document.querySelectorAll('#pn .dt'),function(d){d.open=false});$('#pn').scrollTo({top:0})};$('#pv').onclick=function(){nav(-1)};$('#nx').onclick=function(){nav(1)}}
