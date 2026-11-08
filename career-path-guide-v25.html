@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>職涯路線導覽</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@600;800&family=Iansui&display=swap">
+<style>
+:root{color-scheme:dark;--bg:#2a2535;--dk:#4a4458;--cream:#FFF8F3;--pink:#FFB7B2;--butter:#FFE5B4;--mint:#B5EAD7;--blue:#C7CEEA;--lav:#E2D4F5;--peach:#FFDAC1;--sky:#CDEBF5;--rose:#F9C6D4;--sage:#D4EBC8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{font-size:22px;scroll-behavior:smooth;scroll-padding-top:5rem}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(900px 500px at 10% 0,#3c3350,transparent),var(--bg);color:#f6f1fb;font-family:"Iansui","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+button{font:inherit}
+h1,h2,h3,.st b,.ph h3{font-family:"Chiron GoRound TC","Iansui","Noto Sans TC",sans-serif;font-weight:800;letter-spacing:.02em}
+.fs{display:flex;justify-content:flex-end;align-items:center;gap:.5rem;position:relative;z-index:3;font-size:.85rem;white-space:nowrap}
+.fs button{border:0;border-radius:999px;background:#fff;color:var(--dk);min-width:3rem;height:2.6rem;padding:0 .9rem;line-height:1;cursor:pointer;font-weight:700;box-shadow:inset 0 -3px 0 rgba(0,0,0,.08)}
+.sheet{max-width:1120px;margin:1rem auto;border-radius:2.4rem;background:linear-gradient(150deg,#FFE3E8,#FFF1DC 32%,#E4F6EE 66%,#E6E9FA);color:var(--dk);box-shadow:0 30px 60px rgba(0,0,0,.4);overflow:hidden;position:relative;width:calc(100% - 1.2rem)}
+.w{padding:0 clamp(1.5rem,5vw,3.2rem)}
+.hero{position:relative;padding:1.3rem clamp(1.5rem,5vw,3.2rem) 2.6rem}
+.hero h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.25;margin:0 0 .8rem}
+.hero p{font-size:1.1rem;max-width:30rem;margin:0 0 1.4rem}
+.clay{position:absolute;border-radius:50%;box-shadow:inset -.7rem -.9rem 1.4rem rgba(0,0,0,.12),inset .6rem .7rem 1.2rem rgba(255,255,255,.7),0 1.2rem 2rem rgba(120,90,130,.3);animation:fl 8s ease-in-out infinite alternate}
+@keyframes fl{to{transform:translateY(-1rem) rotate(8deg)}}
+.mac{position:absolute;right:6%;top:3.8rem;width:min(30vw,13rem);animation:fl 6s ease-in-out infinite alternate}
+.btn{border:0;border-radius:999px;padding:.6rem 1.6rem;font-weight:700;background:var(--pink);color:var(--dk);cursor:pointer;text-decoration:none;display:inline-block;box-shadow:inset 0 -4px 0 rgba(0,0,0,.09),inset 0 3px 6px rgba(255,255,255,.7),0 10px 20px rgba(150,100,140,.35);transition:transform .2s}
+.btn:hover{transform:translateY(-3px) scale(1.03)}
+.btn.s{background:var(--mint);font-size:.9rem;padding:.4rem 1.1rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.9rem;padding-bottom:1rem}
+.st{background:rgba(255,255,255,.7);border-radius:1.6rem;padding:.8rem 1rem;text-align:center;box-shadow:inset 0 -4px 0 rgba(0,0,0,.05)}
+.st b{display:block;font-size:2rem;line-height:1.2}.st span{font-size:.9rem}
+section{padding:2.4rem 0 1rem}
+h2{font-size:1.9rem;margin:0 0 .2rem}.lead{margin:0 0 1.2rem;opacity:.85}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.3rem}
+.chips button{border:0;border-radius:999px;padding:.35rem 1.1rem;background:#fff;color:var(--dk);cursor:pointer;box-shadow:inset 0 -3px 0 rgba(0,0,0,.08);transition:.2s}
+.chips button.on{background:var(--pink);transform:scale(1.06)}
+.grid{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));perspective:900px}
+.card{all:unset;box-sizing:border-box;display:flex;flex-direction:column;gap:.3rem;min-height:13rem;padding:1.3rem;border-radius:1.8rem;color:var(--dk);cursor:pointer;box-shadow:inset 0 -6px 0 rgba(0,0,0,.07),inset 0 5px 10px rgba(255,255,255,.75),0 14px 26px rgba(120,90,130,.28);transition:transform .15s,opacity .3s,filter .3s;opacity:0;transform:translateY(30px)}
+.card.sh{opacity:1;transform:none}
+.card.dim{opacity:.4;filter:saturate(.5);transform:scale(.97)!important}
+.card:focus-visible{outline:4px solid #fff}
+.n{width:2.4rem;height:2.4rem;border-radius:50%;background:rgba(255,255,255,.75);display:grid;place-items:center;font-weight:700;font-size:1rem}
+.card h3{margin:.4rem 0 0;font-size:1.5rem}.card p{margin:0;font-size:1rem}
+.tag{align-self:flex-start;background:rgba(255,255,255,.75);border-radius:999px;padding:.05rem .8rem;font-size:.85rem;margin-top:auto}
+.tw{overflow:hidden;border-radius:1.6rem;background:#fff;box-shadow:0 12px 24px rgba(120,90,130,.2)}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:.6rem .7rem;font-size:.85rem;line-height:1.5;border-bottom:1px solid rgba(74,68,88,.1)}
+th{background:var(--lav)}td:first-child{font-weight:700;white-space:nowrap}
+tr:last-child td{border:0}
+tr.cr{cursor:pointer;transition:background .2s}
+tr.cr:hover,tr.cr:focus-visible{background:var(--butter);outline:none}
+footer{max-width:1120px;margin:0 auto;padding:1rem 1.4rem 3rem;color:#c4bad6;font-size:.9rem}
+#ov{position:fixed;inset:0;background:rgba(20,16,28,.75);backdrop-filter:blur(6px);z-index:50;display:none;align-items:center;justify-content:center;padding:.6rem}
+#ov.on{display:flex}
+.pw{position:relative;width:100%;max-width:820px}
+.mup{position:absolute;right:1rem;bottom:5.2rem;width:3.2rem;height:3.2rem;border-radius:50%;border:0;background:var(--pink);color:var(--dk);font-size:1.4rem;font-weight:700;line-height:1;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(.8rem);transition:.3s;box-shadow:inset 0 -4px 0 rgba(0,0,0,.09),inset 0 3px 6px rgba(255,255,255,.7),0 8px 18px rgba(0,0,0,.35)}
+.mup.on{opacity:1;pointer-events:auto;transform:none}
+.pn{width:100%;max-height:92vh;overflow:auto;background:var(--cream);color:var(--dk);border-radius:2rem;box-shadow:0 30px 60px rgba(0,0,0,.5);animation:pin .35s cubic-bezier(.3,1.5,.5,1)}
+@keyframes pin{from{opacity:0;transform:scale(.9) translateY(30px)}}
+.ph{padding:1.4rem 1.6rem 1.1rem;position:relative}
+.ph h3{margin:.2rem 0;font-size:2rem}.ph p{margin:0}
+.x{position:absolute;right:.8rem;top:.8rem;width:2.6rem;height:2.6rem;border-radius:50%;border:0;background:#fff;font-size:1.3rem;cursor:pointer;color:var(--dk)}
+.pb{padding:1.2rem 1.6rem}
+.pb h4{margin:1.2rem 0 .5rem;display:inline-block;background:var(--lav);padding:.1rem .9rem;border-radius:999px;font-size:1rem}
+.pb ul{margin:0;padding-left:1.3rem}.pb li{margin:.4rem 0}
+ol{list-style:none;counter-reset:s;margin:0;padding:0}
+ol li{counter-increment:s;position:relative;padding:.1rem 0 .7rem 3rem;margin:0}
+ol li:before{content:counter(s);position:absolute;left:0;top:0;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--pink);display:grid;place-items:center;font-weight:700}
+ol li:after{content:"";position:absolute;left:1.02rem;top:2.2rem;bottom:0;width:2px;background:var(--lav)}
+ol li:last-child:after{display:none}
+.lk{display:flex;flex-wrap:wrap;gap:.6rem}
+.lk a{background:var(--mint);color:var(--dk);text-decoration:none;border-radius:999px;padding:.35rem 1rem;font-size:.95rem;font-weight:700;box-shadow:inset 0 -3px 0 rgba(0,0,0,.07)}
+.pf{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem clamp(.5rem,5.5vw,1.1rem);padding:0 .6rem 1.5rem}.pf .btn.s{flex:0 0 auto;font-size:.8rem;padding:.4rem .28rem;min-width:2rem;text-align:center;white-space:nowrap}.pf .btn.s.nv{background:var(--blue)}.pf .btn.s.tg{background:var(--mint)}.pf .btn.s.pt{background:var(--butter)}
+.rf{color:#7b4fa0;font-weight:700;text-decoration:none;font-size:.75em;vertical-align:super;margin-left:2px}
+.nt{font-size:.8rem;opacity:.8;margin:.8rem 0 0}
+.how{font-size:.85rem;margin-top:.6rem}.how summary{cursor:pointer;font-weight:700}.how ul{margin:.4rem 0 0;padding-left:1.2rem}.how li{margin:.3rem 0}
+.up{position:fixed;right:max(1rem,env(safe-area-inset-right,0px));bottom:calc(1rem + env(safe-area-inset-bottom,0px));width:3.4rem;height:3.4rem;border-radius:50%;border:0;background:var(--pink);color:var(--dk);font-size:1.5rem;font-weight:700;line-height:1;cursor:pointer;z-index:30;opacity:0;pointer-events:none;transform:translateY(1rem);transition:.3s;box-shadow:inset 0 -4px 0 rgba(0,0,0,.09),inset 0 3px 6px rgba(255,255,255,.7),0 10px 20px rgba(0,0,0,.4)}
+.up.on{opacity:1;pointer-events:auto;transform:none}
+.up:hover{transform:translateY(-3px) scale(1.06)}
+
+.dt{margin:.7rem 0;border-radius:1.2rem;background:#fff;box-shadow:inset 0 -3px 0 rgba(0,0,0,.05)}
+.dt>summary{cursor:pointer;padding:.5rem 1rem;font-weight:700;list-style:none;font-family:"Chiron GoRound TC","Iansui",sans-serif}
+.dt>summary::-webkit-details-marker{display:none}
+.dt>summary:before{content:"＋ "}.dt[open]>summary:before{content:"－ "}
+.dt>summary:focus-visible{outline:3px solid var(--pink)}
+.dt[open]>summary{border-bottom:1px solid rgba(74,68,88,.1)}
+.db{padding:.6rem 1rem .9rem}
+.dl{background:var(--butter);border-radius:1rem;padding:.4rem .9rem;margin:.7rem 0 0;font-size:.95rem}
+.dp{align-self:flex-start;background:var(--butter);border-radius:999px;padding:.05rem .8rem;font-size:.8rem;margin-top:.3rem}
+@media(max-width:820px){thead{display:none}table,tbody,tr,td{display:block}tr.cr{padding:.6rem 0;border-bottom:8px solid var(--lav)}td{border:0;padding:.25rem 1rem}td:first-child{white-space:normal;font-size:1.1rem}td[data-l]:before{content:attr(data-l) "：";font-weight:700;opacity:.7}}
+@media(max-width:1130px){.clay{display:none}}@media(min-width:701px){.hero p{max-width:min(26rem,calc(100% - 15rem))}}
+[hidden]{display:none!important}
+.stats{display:flex;gap:.5rem;padding-bottom:.4rem}.st{flex:1 1 0;padding:.45rem .3rem;border-radius:1.2rem}.st b{font-size:1.2rem;white-space:nowrap}.st span{font-size:.78rem;white-space:nowrap}
+.dirs{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));margin:.4rem 0 1.3rem}
+.dir{all:unset;box-sizing:border-box;display:block;position:relative;overflow:hidden;padding:1.1rem 1.3rem;border-radius:1.8rem;color:var(--dk);cursor:pointer;box-shadow:inset 0 -6px 0 rgba(0,0,0,.07),inset 0 5px 10px rgba(255,255,255,.75),0 14px 26px rgba(120,90,130,.28);transition:transform .4s cubic-bezier(.3,1.5,.5,1),opacity .3s,filter .3s,box-shadow .4s}
+.dir:hover{transform:translateY(-3px)}.dir h3{margin:0;font-size:1.35rem}.dir p{margin:.3rem 0 0;font-size:.95rem}
+.dirs.has .dir:not(.on){opacity:.5;filter:saturate(.55);transform:scale(.97)}.dirs.has .dir:not(.on):hover{opacity:.85}
+.dir.on{transform:translateY(-6px) scale(1.03);box-shadow:inset 0 -6px 0 rgba(0,0,0,.07),inset 0 5px 10px rgba(255,255,255,.85),0 0 36px 8px var(--gl),0 18px 30px rgba(120,90,130,.3)}
+.dir.on:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.7) 50%,transparent 70%);transform:translateX(-120%);animation:dsw 1s ease-out forwards;pointer-events:none}
+.dir.on:after{content:"✨";position:absolute;right:.9rem;top:.7rem;font-size:1.3rem;animation:dpop .55s cubic-bezier(.3,1.8,.5,1)}
+@keyframes dsw{to{transform:translateX(120%)}}@keyframes dpop{from{transform:scale(0) rotate(-40deg)}to{transform:none}}
+@media(prefers-reduced-motion:reduce){.dir.on:before{display:none}.dir.on:after{animation:none}}
+.dir:focus-visible{outline:4px dashed var(--dk);outline-offset:3px}
+.chips button.on:before{content:"✓ "}
+.sub{margin:.2rem 0 .6rem;font-size:1.05rem}
+.rs{font-size:.95rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin:.2rem 0 1rem;font-weight:700}
+.lnk{border:0;background:none;color:#7b4fa0;font:inherit;font-weight:700;text-decoration:underline;cursor:pointer;padding:.2rem .3rem}
+@media print{body>*:not(#ov){display:none!important}body{background:#fff!important}#ov{position:static!important;display:block!important;background:none!important;padding:0!important}.pw{max-width:none}.pn{max-height:none!important;overflow:visible!important;box-shadow:none!important;animation:none!important}.pf,.x,.mup,.up{display:none!important}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+
+<div class="sheet">
+<header class="hero w">
+<div class="fs"><span>字體大小</span><button data-s="-2" aria-label="縮小字體">A−</button><button data-s="0" aria-label="預設字體">A</button><button data-s="4" aria-label="放大字體">A＋</button></div>
+<div class="clay" style="width:7rem;height:7rem;right:30%;top:7rem;background:radial-gradient(circle at 30% 30%,#fff,#C7CEEA);animation-delay:-3s"></div>
+<svg class="mac" viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="148" rx="70" ry="7" fill="rgba(90,60,110,.15)"/><path d="M25 80a75 48 0 0 1 150 0z" fill="#FFB7B2"/><rect x="22" y="78" width="156" height="16" rx="8" fill="#FFF8F3"/><path d="M25 94h150a75 48 0 0 1-150 0z" fill="#B5EAD7"/><circle cx="78" cy="56" r="6" fill="#4a4458"/><circle cx="122" cy="56" r="6" fill="#4a4458"/><path d="M90 66q10 9 20 0" stroke="#4a4458" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="62" cy="68" r="7" fill="#fff" opacity=".6"/><circle cx="138" cy="68" r="7" fill="#fff" opacity=".6"/></svg>
+<h1>找到適合你的<br>下一步 ✨</h1><p>你不需要現在就決定。這裡整理了幾種不同的可能,有些可以馬上試試,有些只是認識一下。不用從第一張開始看,也不用全部看完。</p><a class="btn" href="#routes">慢慢看看</a></header>
+<div class="w stats" id="stats"></div>
+
+<section id="routes"><div class="w"><h2>先選一個方向</h2><p class="lead">點一張,符合的路線會標出來,其他變淡但不會消失。</p><div class="dirs" id="dirs"></div><h3 class="sub">想要的成果(可以再縮小範圍)</h3><div class="chips" id="chips"></div><div class="rs" id="rs" aria-live="polite"><span id="cnt"></span><button class="lnk" id="clr" hidden>清除選擇</button></div><div class="grid" id="grid"></div></div></section>
+<section id="compare"><div class="w"><h2>路線比較</h2><p class="lead">一張表看懂差異。</p><div class="tw"><table id="tb"><thead><tr><th>路線</th><th>取得成果</th><th>所需時間</th><th>主要前提</th><th>能和現在的生活並行嗎?(我的整理)</th></tr></thead><tbody></tbody></table></div><p class="nt">比較表是各路線內容的摘要,出處請看各路線詳細頁的「佐證資料」。</p></div><div style="height:2.4rem"></div></section>
+</div>
+<footer>資料查詢日期:2026/11/07。法規、招生與費用,請以各官方單位公告為準。<br>需要支持時,可撥打 1925 安心專線(24 小時免費)。</footer>
+<button class="up" id="up" aria-label="回到頁面頂端">↑</button>
+<div id="ov"><div class="pw"><div class="pn" id="pn" role="dialog" aria-modal="true" aria-labelledby="pt" tabindex="-1"></div><button class="mup" id="mup" aria-label="回到這張卡片的最上面">↑</button></div></div>
+<script>
+var R=[
+{n:'復學考照',c:'pink',f:'證照',t:'復學並考取物理治療師',w:'想完成學業、成為物理治療師',x:'物理治療師執照',tm:'實習 36 週+國考',p:'復學並畢業(補 2 科、完成實習)',
+d:'回到學校補修缺少的科目,完成實習並畢業,取得畢業證書後報考物理治療師,領證後即可執業。',
+st:['向系辦確認(最好請系辦書面回覆):缺修的 2 科名稱、開課學期、休學期限、復學流程','辦理復學,補修 2 科(修完才能進入實習)','完成實習 36 週(1,440 小時)並成績及格:肌肉骨骼、神經、呼吸循環或小兒各 6 週,其餘為選修領域;至少 18 週在衛福部認定的教學醫院〔2〕','領有畢業證書(報考資格一定要有畢業證書)〔1〕','報名物理治療師國考:共 6 科選擇題,各科成績平均滿 60 分及格〔4〕','領證後,向執業所在地的縣市政府申請執業登記,取得執業執照〔5〕'],
+co:['國考每年 2 次(1 月、7 月)。2027 年第二次:報名 4/13–4/22,考試 7/24–7/26(以考選部公告為準)〔3,4〕','實習約 9 個月(36 週),實際時程要看復學學期與學校安排〔2〕','國考 6 科(各 80 題、1 小時):物理治療基礎學、物理治療學概論、物理治療技術學、神經疾病、骨科疾病、心肺與小兒疾病物理治療學〔4〕','執業後每 6 年需接受一定時數的繼續教育,才能更新執業執照〔6〕'],
+no:['報考資格是「物理治療學系畢業+實習成績及格+領有畢業證書」,只修完學分不夠,必須畢業〔1〕','實習內容或時數不足時,可向國內醫學院校申請補修(考選部現行基準;舊版寫的是臺灣物理治療學會,已不適用)〔2〕','診所打工不計入實習時數〔2〕','休學期限還剩多久,請向系辦確認(各校規定不同)','在診所只能做助手範圍:未取得資格而執行物理治療業務,依物理治療師法第 32 條可處 3 年以下有期徒刑〔6〕'],
+l:[['考選部:物理治療師應考資格','https://wwwc.moex.gov.tw/main/ExamQual/wfrmExamQual.aspx?menu_id=153&examqual_id=791'],['考選部:實習認定基準(PDF)','https://wwwc.moex.gov.tw/main/controls/wHandEditorExtend_File.ashx?Fun=Laws&menu_id=320&item_id=110&file_id=193'],['考選部首頁(請核對考試日期公告)','https://www.moex.gov.tw'],['高點醫護網:考試日期與科目整理(補習班)','https://doctor.get.com.tw/pt/'],['執業登記及繼續教育辦法(全國法規資料庫)','https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020181'],['物理治療師法全文(六法,非官方)','https://6laws.net/6law/law/物理治療師法.htm']]},
+{n:'休息調整',c:'mint',f:'休息',t:'穩定作息,保留彈性',w:'目前需要恢復步調',x:'穩定的生活節奏',tm:'建議 3 至 6 個月',p:'無',
+d:'先把作息與體力穩定下來,把「暫停」當成正式的一段進度,同時保留目前的工作與之後的選擇。',
+st:['逐步建立自己能維持的睡眠節奏(不必一開始就要求早起,先求規律,不求完美)','持續目前的診所工作,維持規律的生活與收入','每週保留一天不安排任何事','需要時,先用免費資源聊一聊(見下方資料連結)〔7,8〕','每月回頭看一次:哪些做得到、哪些想再等等','休學期限到之前,向系辦確認剩餘時間(見路線 01)'],
+co:['時間:建議先以 3 至 6 個月為一階段(建議值,不是規定)','青壯世代心理健康支持方案:15–45 歲、每人 3 次免費個別諮商;2026 年度額度到 12/31,衛福部表示 2027 年續辦〔1,2〕','每次諮商至少 40 分鐘、間隔 7 到 30 天;部分機構可能另收掛號費,預約前先問〔9,10〕','基隆市心理衛生中心:14 歲以上、住在或設籍基隆者可預約心理諮商(電話 02-2456-6185,上班時間來電)〔3,4〕','專線:1925 安心專線(24 小時免費)、1995 生命線、1980 張老師〔5,6〕'],
+no:['不必現在決定方向;休息本身就是進度','這一區的做法是一般建議,不是醫療建議;如果睡不好、心情低落已經影響生活,建議找精神科或心理師','感到撐不住或有傷害自己的想法,請馬上撥 1925;有立即危險請撥 110 或 119〔5,6〕'],
+l:[['商周:2026 免費心理諮商整理','https://www.businessweekly.com.tw/focus/blog/3016202'],['聯合報:衛福部說明方案','https://udn.com/news/story/7266/9790942'],['基隆市社區心理衛生中心:心理諮商','https://www.klchb.klcg.gov.tw/tw/klchb/1984.html'],['基隆市心理諮商資源表(PDF,含電話)','https://csps.kl.edu.tw/docs/file/40/%E4%B8%8B%E8%BC%8928.pdf'],['農業部:諮詢服務資源一覽表(含專線)','https://dop.moa.gov.tw/upload/po/files/web_structure/139/%E8%BE%B2%E6%A5%AD%E9%83%A8%E8%AB%AE%E8%A9%A2%E6%9C%8D%E5%8B%99%E8%B3%87%E6%BA%90%E4%B8%80%E8%A6%BD%E8%A1%A81150105.pdf'],['2026 心理健康資源總整理','https://www.twneed.org/post/74.html'],['心快活:心理健康學習平台','https://wellbeing.mohw.gov.tw/nor/main'],['青壯世代方案:查詢合作機構','https://sps.mohw.gov.tw/mhs'],['緩緩心理諮商所:方案說明','https://www.huanhuan.tw/%E9%A0%90%E7%B4%84%E8%AB%AE%E5%95%86/%E9%9D%92%E5%A3%AF%E4%B8%96%E4%BB%A3%E5%BF%83%E7%90%86%E5%81%A5%E5%BA%B7%E6%94%AF%E6%8C%81%E6%96%B9%E6%A1%88'],['用心說心理治療所:方案說明','https://www.heartfulpsy.com/%E6%94%BF%E5%BA%9C%E8%A3%9C%E5%8A%A9%E8%A8%88%E7%95%AB/']]},
+{n:'空大進修',c:'blue',f:'學位',t:'國立空中大學基隆中心',w:'想一邊上班、一邊慢慢修課',x:'學士學位(空大)',tm:'依自己的進度',p:'先確認原校學籍規定',
+d:'先以空大選修生開始,日後轉為全修生,累積 128 學分取得學士學位。',
+exh:'兩種開始方式',
+ex:['選修生(建議先從這個開始):不具學籍、年滿 18 歲、不限學歷。及格發學分證明,日後錄取全修生時,已修過的科目免修〔2〕','全修生:需有高中(職)畢業證書〔2〕,有學籍、可拿學位。原校若還保留你的學籍(休學中),能否同時就讀,請先問原校(各校規定不同)','選修生轉全修生:選修生修滿 40 學分後免報名費;轉全修生當學期要以新生身分「現場」註冊選課,網路選課無效〔2〕'],
+st:['先決定要不要放棄原校:還想保留物理治療這條路,就先以選修生開始就好','現在到 11/30,在網路報名頁以選修生報名〔1,4〕','12 月到基隆中心註冊選課、繳費(日期以公告為準);每學期最多 5 科,建議第一學期先選 1 到 2 科〔2,7〕','2 月課程開播:看電視、廣播或網路教學,另有每學期約 4 次面授與考試〔2,4〕','決定要拿學位時:先處理原校學籍,再報名全修生','成為全修生後,申請學分減修:大學肄業者依原校實得學分減修,最高 30 學分(需原校肄業證明與歷年成績單)〔3〕','累積學分:總 128 學分、主修學系 75 學分以上,申請畢業,取得學士學位〔2〕'],
+co:['115 學年度下學期新生:網路報名 10/25–11/30(現在正在報名期),課程 2 月開播;上學期則是 4/1–6/30 報名、9 月開播〔2,4〕','報名費 300 元;學分費加雜費每學分 940 元〔2〕','每學期選課上限 5 科;面授以 4 次為原則〔2〕','空大推廣教育處另有每季開班的學分班,可先看看〔6〕','大略估算(我算的,非官方):畢業 128 學分,減修最多 30,至少要修約 98 學分,約 9.2 萬元(只算學分費雜費)〔2,3〕','98 學分約 33 科(每科約 3 學分);每學期最多 5 科,全速約 3 年多,實際多半會更久〔2,3〕'],
+no:['空大學位不能用來報考物理治療師國考(國考要物理治療學系畢業)〔8〕','學分減修每學期公告一次申請期間(114 下學期是 2026/3/2–3/7),請留意教務行政資訊系統〔3〕','休學中的原校學籍、能否開立肄業證明,與「雙重學籍」的規定,各校不同,請向原校確認','空大開設人文、社會科學、商學、公共行政、生活科學、管理與資訊六個學系(舊簡章);沒查到對應物治專業的科目,用來補那 2 科的機會不大,除非是通識類〔2〕','基隆中心:基隆市北寧路 2 號(海洋大學海空大樓 8 樓),電話 02-2462-9938;公車到「海大體育館」站(103、104、108、791 路)〔5〕'],
+l:[['空大網路報名','https://sol.nou.edu.tw/sol/signup/'],['空大新生報名注意事項(PDF)','https://www.nou.edu.tw/img/UserFiles/file/pdf/%E5%9C%8B%E7%AB%8B%E7%A9%BA%E4%B8%AD%E5%A4%A7%E5%AD%B8%E6%96%B0%E7%94%9F%E5%A0%B1%E5%90%8D%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85.pdf'],['學分減修公告(114 下,PDF)','https://studadm.nou.edu.tw/FileUploads/File/7436/dfcd550b-8951-453e-ba6f-ed96a9922bc8.pdf'],['台南中心:115 下學期新生報名消息','https://www2.nou.edu.tw/tainan/Document/List?uid=16&pid=179'],['各學習指導中心聯絡一覽(PDF,含基隆)','https://www2.nou.edu.tw/upload/cont_att/e4c2c3df-efb4-4658-ab7d-37a3e5b090b7.pdf'],['空大推廣教育處學分班','https://www2.nou.edu.tw/myec/Document/List?uid=5171&pid=5167'],['彰化辦公室:註冊選課日說明','https://www2.nou.edu.tw/changhua/docdetail.aspx?uid=3310&pid=3309&docid=11762'],['考選部:物理治療師應考資格','https://wwwc.moex.gov.tw/main/ExamQual/wfrmExamQual.aspx?menu_id=153&examqual_id=791']]},
+{n:'運動健身',c:'butter',f:'證照',t:'運動與健身專業證照',w:'喜歡運動、想走實務路線',x:'體適能、私人教練、皮拉提斯、防護員證照',tm:'依證照而定',p:'入門多為高中畢業;防護員要專科以上畢業',
+d:'四種常見方向:政府認證的國民體適能指導員、國際私人教練、皮拉提斯師資、運動防護員。',
+exh:'四種證照比較',
+ex:['國民體適能指導員(教育部體育署):初級要年滿 18 歲、高中職以上畢業〔6〕;初級可做機關、學校、民間機構的體適能指導,中級可擔任健身中心的體適能指導員〔5〕;基隆市政府教育處 114 年辦過初級與中級場次(德育護理健康學院)〔7〕','國際私人教練(NASM、ACE、ACSM、NSCA):都要年滿 18 歲、高中畢業或同等學歷、有 CPR/AED 證照,入門級不需要大學學位〔1,2,3〕','皮拉提斯:常見國際課程有 STOTT、BASI、Balanced Body〔15〕;以 STOTT 綜合墊上加塑身機課程為例,總共 310 小時(含見習與實習教學)〔13〕;台灣有開課機構,例如某期強化塑身機課程公告費用為 70,000 元(期別請核對)〔14〕','運動防護員(台灣運動傷害防護學會檢定):年滿 20 歲、有救護技術員(EMT)證書,而且專科以上畢業、修畢學會規定課程、完成 250 小時實習〔9,11〕'],
+st:['先選方向:想快速入門,可以看國民體適能指導員;想在健身房工作,看國際私人教練;想教課,看皮拉提斯','國民體適能指導員:查體育署公告的檢定場次,報名後上強化課程再考試〔7〕','國際私人教練:可先報名自學課程,考試前要備妥 CPR/AED 證照〔1〕','皮拉提斯:先從墊上課程開始;器械課程(凱迪拉克、平衡椅等)要先完成綜合或強化課程〔13〕','運動防護員:先取得學位,再向學會確認要修的規定課程與實習〔9,10〕'],
+co:['國民體適能指導員報考費:初級 3,000 元、中級 4,000 元(公告年度請核對)〔8〕','國際證照考試費(美元):NSCA 會員 300、非會員 435〔2〕;ACSM 會員 310、非會員 410;NASM 單考約 599〔4〕','NASM-CPT 考試 120 題,購買後 180 天內要考〔1〕'],
+no:['更高階的證照(例如 NSCA 的 CSCS、ACSM 的 HFS)需要學士學位〔3〕','國際證照在台灣有沒有考場、有沒有中文教材,我沒查到,請看各官網','不得以「物理治療」名義宣傳(物理治療師法第 5 條)〔16〕','無資格執行物理治療業務須負刑責(第 32 條)〔16〕','運動防護員要先有學位;你的物治課程能抵多少規定課程,請洽學會(電話 02-7729-3571,110 年簡章)〔12〕'],
+l:[['NASM-CPT 官方頁','https://www.nasm.org/products/become-a-personal-trainer'],['NSCA-CPT 官方頁','https://www.nsca.com/certification/nsca-cpt/'],['NASM:各家私人教練證照比較','https://www.nasm.org/resource-center/blog/certification/what-pt-certifications-exist-a-complete-2026-comparison'],['私人教練證照費用整理(Trade-Schools)','https://www.trade-schools.net/articles/become-a-personal-trainer'],['國民體適能指導員資格檢定辦法(教育部,PDF)','https://www.es.nccu.edu.tw/wp-content/uploads/sites/30/2023/09/附件2-1.pdf'],['國民體適能指導員檢定簡章(108 年,PDF)','https://files.chcg.gov.tw/files/國民體適能指導員檢定考試簡章_111_1080329.pdf'],['國民體適能指導員 114 年簡章(含基隆場次,PDF)','https://sportsmed.kmu.edu.tw/attachments/article/1088/114簡章-指導員授證檢定考試.pdf'],['國民體適能指導員報考費用(台東大學公告,PDF)','https://coce.nttu.edu.tw/var/file/5/1005/img/239028721.pdf'],['運動防護員檢定:報考資格(學會)','https://www.tats.org.tw/node/7464'],['運動防護員資格檢定辦法修正公告(學會)','https://www.tats.org.tw/news/9442'],['運動防護員 109 年檢定簡章(學會)','https://www.tats.org.tw/news/3072'],['運動防護員 110 年檢定簡章(PDF,含電話)','https://sportsmed.kmu.edu.tw/attachments/article/652/110%E5%B9%B4%E5%BA%A6%E7%AC%AC1%E6%AC%A1%E9%81%8B%E5%8B%95%E9%98%B2%E8%AD%B7%E5%93%A1%E8%B3%87%E6%A0%BC%E6%AA%A2%E5%AE%9A%E8%80%83%E8%A9%A6%E7%B0%A1%E7%AB%A0.pdf'],['STOTT PILATES 官方:綜合課程','https://www.merrithew.com/instructor-training/stott-pilates/courses/comprehensive-program'],['瑜珈之旅:台灣 STOTT 開課資訊','https://yogajourney.com.tw/en/stott-pilates-certification-training-program/'],['皮拉提斯認證比較(BASI、Balanced Body)','https://fitnesstrainer.com/blog/best-pilates-certifications/'],['物理治療師法全文(六法,非官方)','https://6laws.net/6law/law/物理治療師法.htm']]},
+{n:'研究所進修',c:'lav',f:'學位',t:'以同等學力報考碩士班',w:'想轉換領域、不想重讀大學部',x:'碩士學位',tm:'報名多在 11–12 月,讀完依各校',p:'符合同等學力資格',
+d:'以同等學力報考碩士班,不必先拿到學士學位,轉向運動科學、長照等領域。',
+st:['確認就讀學校的「規定修業年限」,向系辦申請「修業證明書」或「休學證明書」與歷年成績單〔3〕','對照第 5 條資格(符合其一):①僅未修滿最後一年,退學或休學,自規定修業年限最後一年的第一天起滿 2 年;②修滿規定修業年限但未畢業,自最後一年的末日起滿 1 年;③在 6 年制(含實習)學士班修滿 4 年且修畢 128 學分以上〔3,1〕','年數計算:從規定起算日算到「報考當學年度的註冊截止日」〔4〕','挑想讀的碩士班,看簡章的報考資格,以及是否要先申請同等學力資格認定〔7〕','網路報名並上傳資格證明,通過資格審查後參加筆試或口試〔5,6〕'],
+co:['116 學年度(2027 年秋季入學)的考試入學,報名多在 2026 年 11 到 12 月。例:臺師大 11/10–11/20〔5〕、中央 11/17–11/26〔9〕、中興 11/24–12/8〔8〕、台科大 11/27–12/10〔6〕','筆試落在 2027 年 1 月底到 2 月初。例:臺師大 1/26〔5〕、台科大 1/25〔6〕、中興 2/2〔8〕','國立體育大學 116 學年度甄試報名已截止(10/5),同等學力要在 9/30 前先申請資格認定〔7〕'],
+no:['取得的是碩士學位,不具物理治療師資格〔10〕','各校的報考資格、考試科目與審查方式不同,有些學校要先申請認定同等學力(例:國立體育大學)〔7〕','「是否算修滿規定修業年限」,以學校開立的修業或休學證明為準;休學期間怎麼算,請問系辦','2027 年秋季入學這一輪時間很緊,來不及也不必勉強,可以先看簡章了解','研究負擔較重,可列為後續評估'],
+l:[['教育部:入學大學同等學力認定標準','https://edu.law.moe.gov.tw/LawContent.aspx?id=FL008644'],['全國法規資料庫:同等學力標準第 5 條','http://law.moj.gov.tw/LawClass/LawSingle.aspx?Pcode=H0030032&FLNO=5'],['中興大學 115 學年度簡章附錄:第 5 條原文(PDF)','https://recruit.nchu.edu.tw/grade-exam/IRM/115/115IM-F_Appendix2.pdf'],['元智大學簡章附錄:第 11 條年數計算(PDF)','https://gao.yzu.edu.tw/admissions/files/AA/aplexam/docs/6005.pdf'],['臺師大 116 學年度碩士班考試簡章','https://www.aa.ntnu.edu.tw/zh_tw/admission/116%E5%AD%B8%E5%B9%B4%E5%BA%A6%E7%A2%A9%E5%A3%AB%E7%8F%AD%E8%80%83%E8%A9%A6%E6%8B%9B%E7%94%9F%E7%B0%A1%E7%AB%A0%E6%9A%A8%E9%99%84%E4%BB%B6-7478625'],['台科大 116 學年度碩士班簡章(PDF)','https://www.admission.ntust.edu.tw/var/file/52/1052/img/2674/143224768.pdf'],['國立體育大學 116 學年度甄試簡章','https://aca.ntsu.edu.tw/p/406-1004-65441,r5.php?Lang=zh-tw'],['中興 116 學年度日程整理(TKB,非官方)','https://www.tkbgo.com.tw/schoolZone/graduate/news/toDetail?news_id=5132'],['中央 116 學年度日程整理(TKB,非官方)','https://www.tkbgo.com.tw/schoolZone/graduate/news/toDetail?news_id=5068'],['考選部:物理治療師應考資格','https://wwwc.moex.gov.tw/main/ExamQual/wfrmExamQual.aspx?menu_id=153&examqual_id=791']]},
+{n:'跨域探索',c:'peach',f:'探索',t:'興趣與專業的交集',w:'還沒有方向,想先慢慢看資訊',x:'探索方向',tm:'不限',p:'多數要先進入相關系所',
+d:'把喜歡的事和專業背景放在一起,先看看別人怎麼做。這一區都是「逛逛就好」,不需要決定。',
+exh:'三個可以逛逛的方向',
+ex:['音樂治療:臺灣音樂治療學會認證的音樂治療師(TCMT),要求是學會正式會員、教育部認可的音樂治療系所組學士以上畢業、完成 1,000 小時實習或督導臨床實作〔1〕。東海大學音樂系有碩士班音樂治療組,113 學年度起還設有學士班音樂治療組〔2〕;輔仁大學音樂學系有碩士在職專班音樂治療組〔3〕','創造性藝術治療:臺灣目前包含舞蹈治療、藝術治療、音樂治療、戲劇治療與心理劇五個專業〔4〕。臺北市立大學視覺藝術學系碩士班設有藝術治療組〔5〕;中國醫藥大學推廣教育曾開藝術治療概論課(54 小時,對藝術治療有興趣者都可報名)〔6〕;2025 年創造性藝術治療聯合研討會有舞蹈治療與長照據點、高齡者藝術治療等場次〔7〕','復健科技:國內有自行開發的中風上肢復健遊戲研究(中山醫大)〔8〕;2026 年 7 月報導,台灣醫材廠商與科技公司合作開發 AI 外骨骼復健機器人 FREE Walk〔9〕'],
+st:['先看:挑上面一個連結,看完不用做任何事','覺得有趣,再搜尋一個關鍵字(例如:音樂治療、舞蹈治療、復健機器人)','留意學會或學校的講座、工作坊公告;像藝術治療概論這類推廣課程,有興趣的人都能報名〔6〕','跟診所的治療師聊聊:他們有沒有用過復健科技或輔助設備','有興趣了,再回頭看需要的學歷與證照'],
+co:['音樂治療師的專業認證有效期限為 5 年〔1〕','逛逛不限時間,也不需要報名或費用'],
+no:['音樂治療的認證要求音樂治療系所畢業(學士以上)與 1,000 小時實習,要走這條路得先進入相關系所〔1〕','創造性藝術治療的認證各學會不同,請向各學會確認(例如臺灣藝術治療學會)','復健科技這一項我只查到研究與新聞,沒查到對應的職缺、薪資或證照','嗓音與呼吸:我沒查到證照或課程資料,先當作興趣','這一區多為學會、新聞與學校資料,請以各學會與學校公告為準'],
+l:[['臺灣音樂治療學會:專業認證','https://taiwanmusictherapy.org/musictherapist/'],['工商時報:東海音樂治療學士班','https://www.ctee.com.tw/news/20240117701482-431204'],['音樂治療師哪裡來(輔大在職專班、東海碩士)','https://www.musictherapy.tw/l/%E9%9F%B3%E6%A8%82%E6%B2%BB%E7%99%82%E5%B8%AB%E5%93%AA%E8%A3%A1%E4%BE%86/'],['藝術治療在臺灣(Podcast)','https://rephonic.com/podcasts/yi-shu-zhi-liao-zai-tai-wan'],['臺北市立大學藝術治療組課程說明(PDF)','https://art.utaipei.edu.tw/web/wp-content/uploads/112_va_arttherapy.pdf'],['中國醫藥大學藝術治療概論課程(PDF)','https://coce.nttu.edu.tw/var/file/5/1005/attach/33/pta_104734_892366_62376.pdf'],['創造性藝術治療聯合研討會流程(PDF)','https://ms.kmu.edu.tw/attachments/article/1749/2025創造性藝術治療聯合研討會流程表.pdf'],['中山醫大:復健遊戲研究(PDF)','https://ir.csmu.edu.tw:8080/bitstream/310902500/13647/2/陳美香.pdf'],['科技新報:外骨骼復健機器人','https://technews.tw/2026/07/29/intel-is-expanding-into-the-field-of-smart-healthcare-and-rehabilitation/']]},
+{n:'長照實務',c:'sky',f:'證照',t:'基隆照顧服務員訓練',w:'想累積照護實務經驗',x:'照服員結業證書',tm:'依各期簡章',p:'年滿 16 歲、通過甄試',
+d:'完成照顧服務員訓練、取得結業證書後,登錄在長照機構就能提供長照服務,可作為累積照護實務經驗的過渡性工作。',
+exh:'基隆的訓練資訊',
+ex:['最新一期:基隆市照顧服務員專班第 12 期預計 115 年 10 月 1 日開訓,由法制及勞動處委託基隆市長照服務人員職業工會辦理〔3〕','上一期(第 11 期)的做法:2026/9/7–9/23,週一到週五 08:30–16:50,學科與術科在德育護理健康學院,應用實習在博愛仁愛之家,名額 30 人(含隨班附讀 3 人)〔2〕','報名資格:年滿 16 歲,以失業者優先;初次就業待業者,或有勞保等被保險人身分的在職勞工也可報名〔2〕。114 年一梯次寫明在職者以不逾招生人數 15% 為原則〔5〕','甄試:114 年第 1 期有筆試與口試〔5〕','費用(114 年底班):實體學員先繳 9,900 元、隨班附讀 5,940 元;及格取得結業證書後,依核定單價全額補助,不及格補助 50%〔4〕','洽詢:基隆市長照服務人員職業工會 (02)2455-2527〔4〕','隨班附讀:先在衛福部長期照顧專業人員數位學習平臺完成核心課程、取得證明,再只上術科〔1〕;114 年底班要求附上線上學習證明,才能參加實習〔4〕'],
+st:['先電話洽詢工會或社會處公告的訓練單位,問下一期開班時間,以及休學、有打工的你能不能報名〔1,3〕','(選擇性)先上衛福部線上學習平臺,完成核心課程〔1〕','報名並通過甄試〔5〕','完成學科、術科與實習,及格取得結業證書〔1,4〕','登錄在長照機構,才能提供長照服務〔6〕','(進階)領有證書並在職後,可上失智症照顧服務 20 小時訓練(基隆市立醫院 115 年 5 月曾辦理)〔7〕'],
+co:['認證證明文件有效期間 6 年;要更新,須在到期前 6 個月內申請〔6,8〕','有登錄服務的人,每 6 年需完成繼續教育積分合計 120 點以上〔8〕','外縣市的徵才例:高雄市立凱旋醫院日照中心契約照服員,月薪 38,030 元起(含預借獎勵金),具結業證書者經常性薪資 32,451 元〔10〕。這是外縣市資料,僅供參考'],
+no:['下一批的日期我還沒看到公告;第 12 期 10/1 已開訓,請向社會處或工會詢問〔1,3〕','休學身分能否報名,我查不到;簡章寫的是失業者優先、在職者有比例限制,請直接問承辦〔2,5〕','取得認證後 6 年內,若從未登錄長照單位或實際提供長照服務,到期後無法更新認證〔9〕','有些醫院徵才要求「現非就學或進修中」(例:高雄市立凱旋醫院),休學身分算不算,要問用人單位〔11〕','工作內容例:住民照護、病室環境整理清潔、護理站庶務性工作〔11〕;體力負擔不小,可先從半工時評估'],
+l:[['基隆市社會處:115 年度訓練課程公告','https://www.klcg.gov.tw/tw/social/2636-313440.html'],['基隆市照服員專班第 11 期簡章頁','https://www.beclass.com/rid=30527776a6725354dfbf'],['蕃新聞:基隆照服員專班第 12 期招生','https://n.yam.com/Article/20260915358279'],['114 年底班招生頁(含費用與補助)','https://www.beclass.com/rid=294db33674e83e1e9cbc'],['114 年第 1 期專班簡章(甄試、在職比例)','https://www.beclass.com/rid=294fec767cfce17e478b'],['長照人員訓練認證繼續教育及登錄辦法第 11 條(全國法規資料庫)','https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=L0070045&flno=11'],['基隆市立醫院:失智症照顧服務 20 小時訓練','https://www.kmh.klcg.gov.tw/tw/kmh1/3719-313386.html'],['長照人員訓練認證繼續教育及登錄辦法(PDF)','https://long-term.hlshb.gov.tw/img/blog/upload/files/05_%E9%95%B7%E6%9C%9F%E7%85%A7%E9%A1%A7%E6%9C%8D%E5%8B%99%E4%BA%BA%E5%93%A1%E8%A8%93%E7%B7%B4%E8%AA%8D%E8%AD%89%E7%B9%BC%E7%BA%8C%E6%95%99%E8%82%B2%E5%8F%8A%E7%99%BB%E9%8C%84%E8%BE%A6%E6%B3%95.pdf'],['辦法問答集(照顧服務員 6 年更新、登錄)','https://www.taiwanslpu.org.tw/image/files/%E9%95%B7%E7%85%A7%E4%BA%BA%E5%93%A1%E8%A8%93%E7%B7%B4%E8%AA%8D%E8%AD%89%E7%B9%BC%E7%BA%8C%E6%95%99%E8%82%B2%E5%8F%8A%E7%99%BB%E9%8C%84%E8%BE%A6%E6%B3%95%E5%95%8F%E7%AD%94%E9%9B%86.pdf'],['高雄市立凱旋醫院:日間照顧中心照服員徵才(PDF)','https://ksph.kcg.gov.tw/1/post1150323dc.pdf'],['高雄市立凱旋醫院:護理科契約照服員徵才(PDF)','https://ksph.kcg.gov.tw/1/post111999-3_1140701.pdf']]},
+{n:'醫療行政',c:'rose',f:'工作',t:'診所與醫院的行政、掛號、病歷',w:'想留在醫療環境、但不想做高體力工作',x:'醫療行政工作經驗',tm:'依職缺',p:'多為高中以上,有經驗較佳',
+d:'在診所或醫院擔任櫃台、掛號、批價、病歷與健保申報相關的行政工作,體力負擔比治療或照護小,也能繼續待在醫療環境裡。',
+exh:'常見工作內容與條件(取自職缺公告)',
+ex:['高中畢業、大學沒畢業,可以應徵診所行政:基隆的診所助理職缺,學歷常寫「高中職以上」或「學歷不拘」〔9〕;陳怡穎皮膚科診所的公告寫高中職、專科、大學都可〔10〕','基隆的例子(1111 人力銀行,2026 年 3 月):瀚翔骨科診所的診所助理,工作含櫃台行政、病歷歸整、收銀,高中職以上,月薪 29,500–36,000 元;妮可美麗醫學事業集團的診所助理,協助掛號、病患接待、病歷處理,學歷不拘,月薪 29,500–30,000 元〔9〕','診所櫃台行政:掛號、批價收費、健保申報相關作業、診間叫號、環境整理等〔1,2〕','醫院醫事室(門診組)助理員:門急診掛號、批價收費、民眾諮詢;有一則公告寫專科以上,大學醫管、公衛、財會系畢業尤佳〔3〕','復健科診所也有櫃台職缺:例如新北板橋一家的晚班櫃台,公告寫無診所櫃檯經驗也可〔4〕','醫務管理相關系所:例如亞洲大學健康產業管理學系(醫療機構管理組)〔5〕;義守大學的系所介紹提到畢業生可報考醫務管理師、病歷資訊管理師、疾病分類師等專業證照〔6〕','病歷資訊管理專業甄審(114 年簡章):考試科目為病歷資訊管理概論(選擇題),報名需繳驗學生證或在學證明〔7〕'],
+st:['先看目前診所工作裡,哪些行政事務(掛號、批價、病歷)你已經接觸過','到人力銀行搜尋「基隆 診所助理」「診所 櫃台」,學歷欄選「高中職」〔9〕','履歷上寫明大學物理治療學系的就讀經歷,以及現在診所助手的工作經驗','想進一步,再看醫務管理系所與專業證照〔5,6〕'],
+co:['薪資例(職缺公告,不是統計):診所櫃台行政月薪 32,000–40,000 元〔1〕、32,000–38,000 元〔2〕;醫院門診批價掛號月薪 28,740 元以上〔3〕','基隆診所助理的月薪例:29,500–36,000 元〔9〕','工作型態:有全職,也有晚班或長期兼職的職缺〔4〕'],
+no:['醫院醫事室的助理員,有公告寫專科以上〔3〕;目前沒有畢業證書的話,可能不符合,診所的機會比較多','這類職缺是行政工作,不是治療工作;即使在診所,仍不能做物理治療業務(物理治療師法第 32 條)〔8〕','公告會過期,薪資與條件只是例子,不是統計;請到人力銀行搜尋「基隆 診所助理」看最新的〔9〕','「醫務管理」是系所與證照的領域,不是單一考試;要走學位路線,需要先完成學士學位〔5,6〕','病歷資訊管理甄審的報考資格要看簡章,休學算不算「在學」,請問主辦單位〔7〕'],
+l:[['聯新國際診所:櫃台行政徵才','https://freehire.me/jobs/xu-lun-ban-gui-tai-xing-zheng-ren-yuan-gong-zuo-di-dian-zhu-bei-lian-xin-guo-ji-zhen-suo-cf34yy6o'],['南崁現代診所:櫃台行政徵才','https://freehire.me/jobs/zhu-bei-xian-dai-zhen-suo-zhen-suo-zhu-li-gui-tai-ren-yuan-xing-zheng-zhuan-yuan-xing-zheng-ren-yuan-nan-kan-xian-dai-zhen-suo-uve2yla7'],['104 人力銀行:門診掛號職缺彙整','https://www.104.com.tw/jobs/search/?svrd=1&keyword=%E9%96%80%E8%A8%BA%E6%8E%9B%E8%99%9F&jobcat=2002001012&jobsource=cmw_redirect'],['健心復健科診所:櫃台徵才','https://freehire.me/jobs/gui-tai-gua-hao-xing-zheng-ren-yuan-wan-ban-yi-ke-chang-qi-jian-zhi-jian-xin-fu-jian-ke-zhen-suo-23jr2z44'],['亞洲大學健康產業管理學系簡介','https://ha.asia.edu.tw/zh_tw/area_2_a/brief_1/badev'],['義守大學學系介紹(PDF,含證照)','https://www.isu.edu.tw/storage/files/rR0wRWz9qTkMRW7nHEAZ8LLiOpzGEzMs0eiz99SS.pdf'],['病歷資訊管理專業甄審 114 年簡章(PDF)','https://cms-carrier.ntpu.edu.tw/uploads/114_df0ab51c57.pdf'],['物理治療師法全文(六法,非官方)','https://6laws.net/6law/law/物理治療師法.htm'],['1111 人力銀行:基隆診所職缺搜尋(2026 年 3 月)','https://www.1111.com.tw/search/job?page=1&col=ab&sort=desc&ks=%E8%A8%BA%E6%89%80&c0=100300'],['1111 人力銀行:診所助理職缺例(學歷高中職、專科、大學)','https://www.1111.com.tw/job/76463046']]},
+{n:'政府職訓',c:'sage',f:'工作',t:'勞動部的職前訓練與青年專案',w:'想學一門新技能、使用政府補助',x:'結訓證書與新技能',tm:'依各班簡章',p:'待業;青年專案為 15–29 歲',
+d:'勞動部勞動力發展署辦理的職業訓練。其中「產業新尖兵計畫」針對 15–29 歲的待業青年,提供數位資訊、電子電機、國際行銷企劃等課程的補助。',
+exh:'產業新尖兵計畫(青年專案)的重點',
+ex:['對象:年滿 15 歲到 29 歲的本國籍失業或待業青年,年齡以開訓日為準〔1,2〕','不能參加的情況:訓練期間不得是在職勞工、自營作業者或公司負責人〔2〕;日間部在學學生不能參訓〔3〕;參加過政府職前訓練,結訓後 180 日內不得參加〔2〕','課程領域:電子電機、工業機械、數位資訊、綠能科技、國際行銷企劃〔1〕','補助:青年先繳自付額 1 萬元,出席達總時數三分之二以上並取得結業證書,可申請補助取回〔1,6〕;每月可領學習獎勵金 8,000 元,最高 96,000 元,以參訓一班為限〔1〕','2026 年的報導:勞動部的「青年職前訓練學習獎勵金」,也適用於 15–29 歲待業青年參加失業者職前訓練或產業新尖兵課程〔5〕'],
+st:['先確認身分:現在有打工(在職勞工)就不符合產業新尖兵的資格;休學身分算不算「日間部在學學生」,要問分署〔2,3〕','查目前開班的課程:到「台灣就業通-產業新尖兵計畫網」的課程查詢,登入台灣就業通帳號報名〔7,9〕','報名步驟:先成為台灣就業通會員並完成「我喜歡做的事」職涯興趣測驗,再線上簽「報名及參訓資格切結書」,並繳最高學歷證明影本〔9〕','2026 年基隆就業博覽會由北分署主辦,基隆市府設有職業訓練諮詢攤位〔8〕','看課程例子:銘傳大學 111 年的雲端工程師班,418 小時、訓練費約 10 萬元,由計畫補助 100%〔4〕'],
+co:['學習獎勵金每月最高 8,000 元、累計最高 96,000 元〔1,5〕','自付額 1 萬元(符合條件可取回,細節以分署公告為準)〔1,6〕'],
+no:['這條路和你目前的醫療方向不同,課程多為資訊、電機、行銷;我沒查到醫療或長照類的青年專案課程','領取失業給付或職訓生活津貼期間,不能領學習獎勵金〔5〕','在職或休學的身分都可能不符資格,不要為了這個辭掉目前的工作,先問清楚〔2,3〕','開班資訊會隨時更新,我查不到基隆目前的班別,請用上面的課程查詢,或洽分署〔7〕','有的課程要求上課期間不可具勞保身分(例:台東大學一班的簡章),有勞保的打工要先確認〔10〕'],
+l:[['中彰投分署:產業新尖兵計畫','https://tcnr.wda.gov.tw/cp.aspx?n=9D8DE2B443B545C3'],['勞動法令查詢系統:產業新尖兵計畫','https://laws.mol.gov.tw/FLAW/PrintFLAWDAT0202.aspx?id=FL092538'],['勞發署:產業新尖兵問答集(PDF)','https://ws.wda.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvMzEyL3JlbGZpbGUvOTIwMC8xNzIxOTkvMzBkZjgzOTktNjA1OC00MmFhLWIyZjItYjU4OWY4Mjk4OTA4LnBkZg%3D%3D&n=6ZmE5Lu2Mi7nlKLmpa3mlrDlsJblhbXoqIjnlatRQS5wZGY%3D'],['產業新尖兵招生簡章例(111 年,PDF)','https://careercenter.ntnu.edu.tw/upload/1650415663.pdf'],['TVBS:青年職前訓練學習獎勵金','https://health.tvbs.com.tw/nutrition/363625'],['產業新尖兵 2026 整理(非官方)','https://bewithnene.tw/elite_jobs_training/'],['台灣就業通:產業新尖兵計畫網(開班課程查詢)','https://elite.taiwanjobs.gov.tw/ClassSearch'],['ETtoday:2026 基隆就業博覽會','https://www.ettoday.net/news/20260424/3153813.htm'],['產業新尖兵招生簡章例(報名步驟、不符資格,PDF)','https://career.ntu.edu.tw/board/download/sn/1259'],['台東大學一班的簡章(上課期間不可具勞保身分,PDF)','https://coce.nttu.edu.tw/var/file/5/1005/attach/46/pta_107227_8580575_37809.pdf']]}];
+var M=['向系辦問清楚兩件事:缺修哪 2 科、休學期限到什麼時候。問完不用決定任何事。','挑一天,什麼都不安排。就這樣。','先看一眼空大選修生的簡介,不用報名。','想想自己喜歡哪一種:帶人運動、在健身房工作、還是教課?再點一個連結看看。','先看一份簡章的「報考資格」那一段,看自己符不符合。這一輪時間較緊,來不及也不必勉強。','挑一個連結看完就好,不用做任何事。','查一下社會處公告,或打電話問下一期什麼時候開班、休學的人能不能報名。','先留意目前診所裡掛號、批價、病歷是誰在做,哪些你已經碰過。如果有興趣,可以問問診所有沒有櫃台、掛號或行政工作的學習與轉任機會。','先查自己符不符合資格:有打工的話,可能不符合產業新尖兵。先不要辭掉現在的工作。'];
+var DL={2:'這一輪(115 學年度下學期)網路報名到 11/30;下一輪是 4/1–6/30 報名、9 月開播,錯過可以等。',4:'這是 116 學年度這一輪的時程,報名多在 11–12 月。來不及也沒關係,可以先了解。',6:'第 12 期已在 10/1 開訓,目前不能報名;下一期尚未看到公告,請洽詢社會處或工會。'};
+var DP={2:'115 下學期・報名到 11/30',4:'116 學年度・11–12 月報名',6:'第 12 期已開訓・下期未公告'};
+R.forEach(function(r,i){r.m=M[i];r.dl=DL[i];r.dp=DP[i]});
+R[0].t='如果想完成物理治療學業';
+
+R[4].t='以同等學力報考碩士班(116 學年度)';
+R[1].sp=R[1].co.slice(1).concat(['想先聊一聊時,可以從這兩個入口開始:心快活學習平台、青壯世代方案的合作機構查詢〔7,8〕']);R[1].co=R[1].co.slice(0,1);R[1].st=R[1].st.filter(function(x){return x.indexOf('免費資源')<0});
+R[7].st.splice(1,0,'如果對行政工作有興趣,可以詢問目前診所是否有櫃台、掛號或行政工作的學習與轉任機會(班別也先問清楚)');
+R[5].exh='可以逛逛的方向';
+R[5].ex.push('電玩:搜尋到遊戲公司的職缺名稱有「遊戲文字客服」〔10〕、「遊戲測試專員」〔11〕、「遊戲營運助理(工讀・兼職)」〔12〕、「手機遊戲社群編輯/內容企劃」〔13〕。我只確認到職缺名稱,頁面打不開,學歷、薪資、是否接受新人都沒查到,請自己點開看');
+R[5].ex.push('合唱團:沒查到「合唱團行政」「演出活動協助」這類對應的職缺。可以先問問你參加的合唱團,有沒有行政或活動協助可以幫忙(這是行動建議,不是職缺資料)');
+R[5].l.push(['遊戲文字客服職缺(Yourator,我這邊打不開)','https://www.yourator.co/companies/garena/jobs/12658'],['遊戲測試專員職缺(Yourator,我這邊打不開)','https://www.yourator.co/companies/garena/jobs/7136'],['遊戲營運助理・工讀兼職職缺(Yourator,我這邊打不開)','https://www.yourator.co/companies/Akatsuki/jobs/21832'],['手機遊戲社群編輯/內容企劃職缺(Yourator,我這邊打不開)','https://www.yourator.co/companies/garena/jobs/4003']);
+R[5].no.push('電玩、合唱團這兩項是依興趣新增的探索方向,有興趣不代表一定適合,也不保證能進入');
+var $=function(s){return document.querySelector(s)},cur=0,LF=null;
+var CR;function rf(x){return x.replace(/〔([\d,]+)〕/g,function(m,n){return n.split(',').map(function(i){var k=CR.l[i-1];return '<a class="rf" href="'+k[1]+'" target="_blank" rel="noopener">['+i+']</a>'}).join('')})}
+function sec(t,h){return '<details class="dt"><summary>'+t+'</summary><div class="db">'+h+'</div></details>'}
+function ul(a,o){return '<'+(o||'ul')+'>'+a.map(function(x){return '<li>'+rf(x)+'</li>'}).join('')+'</'+(o||'ul')+'>'}
+var G=[['先穩定下來','維持目前的生活與工作節奏,不用急著做長期決定。',[1,7]],['想繼續學習或累積專業','需要投入時間、學習或取得資格,可以慢慢評估。',[0,2,3,4,6,8]],['先逛逛、探索看看','先認識不同領域,再看要不要投入。',[5,3,8]]];
+var SD=null,SO=null;
+function ok(i){return (SD===null||G[SD][2].indexOf(i)>=0)&&(SO===null||SO==='全部'||R[i].f===SO)}
+function vis(){var o=[];R.forEach(function(r,i){if(ok(i))o.push(i)});return o}
+function nav(d){var l=vis();if(!l.length)l=R.map(function(r,i){return i});var p=l.indexOf(cur);if(p<0)p=d>0?-1:0;open(l[(p+d+l.length)%l.length])}
+function cd(i){var r=R[i];return '<button class="card" style="background:var(--'+r.c+')" data-i="'+i+'"><span class="n">0'+(i+1)+'</span><h3>'+r.n+'</h3><p>'+r.t+'</p>'+(r.dp?'<span class="dp">'+r.dp+'</span>':'')+'<span class="tag">適合:'+r.w+'</span></button>'}
+$('#grid').innerHTML=R.map(function(r,i){return cd(i)}).join('');
+var CARDS=[].slice.call(document.querySelectorAll('.card'));
+
+var REL=['需要補修與實習,時間較固定,先確認再決定','可以,本來就是留白','選修生可以邊工作邊修;全修生要先處理原校學籍','可以(防護員要先有學位)','報考與讀書要另外安排時間;碩士不能取代物治資格','逛逛可以;要走專業得先進入相關系所','訓練期間多為平日白天,要先問能否配合','可以,現在的診所工作就是起點','青年專案要求不是在職勞工,要和現在的工作取捨'];R.forEach(function(r,i){r.rel=REL[i]});
+$('#tb tbody').innerHTML=R.map(function(r,i){return '<tr class="cr" tabindex="0" data-i="'+i+'"><td>0'+(i+1)+' '+r.n+'</td><td data-l="取得成果">'+r.x+'</td><td data-l="所需時間">'+r.tm+'</td><td data-l="主要前提">'+r.p+'</td><td data-l="能並行嗎">'+r.rel+'</td></tr>'}).join('');
+$('#stats').innerHTML=[[9,'種可能'],[3,'個方向'],['每一步','都算數']].map(function(s){return '<div class="st">'+(typeof s[0]==='number'?'<b data-n="'+s[0]+'">0</b>':'<b>'+s[0]+'</b>')+'<span>'+s[1]+'</span></div>'}).join('');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);var t=e.target;if(t.dataset.n){var n=+t.dataset.n,s=0,id=setInterval(function(){s+=Math.ceil(n/40);if(s>=n){s=n;clearInterval(id)}t.textContent=s.toLocaleString()},30)}else setTimeout(function(){t.classList.add('sh')},(+t.dataset.i%4)*90)})},{threshold:.2});
+document.querySelectorAll('.card,[data-n]').forEach(function(e){io.observe(e)});
+var F=['全部','證照','學位','休息','探索','工作'],FL={全部:'全部',證照:'想拿證照',學位:'想拿學位',休息:'想先休息',探索:'想探索看看',工作:'想先找工作'},DC=['mint','lav','peach'],GL=['rgba(90,215,175,.85)','rgba(165,130,235,.85)','rgba(255,160,120,.85)'];
+$('#dirs').innerHTML=G.map(function(g,gi){return '<button class="dir" aria-pressed="false" data-g="'+gi+'" style="background:var(--'+DC[gi]+');--gl:'+GL[gi]+'"><h3>'+g[0]+'</h3><p>'+g[1]+'</p></button>'}).join('');
+$('#chips').innerHTML=F.map(function(f){return '<button aria-pressed="false">'+FL[f]+'</button>'}).join('');
+function upd(sc,init){var any=SD!==null||SO!==null,n=0;if(!init)CARDS.forEach(function(c){c.classList.add('sh')});
+[].forEach.call($('#dirs').children,function(b,i){b.classList.toggle('on',SD===i);b.setAttribute('aria-pressed',SD===i?'true':'false')});
+[].forEach.call($('#chips').children,function(b,i){b.classList.toggle('on',SO===F[i]);b.setAttribute('aria-pressed',SO===F[i]?'true':'false')});
+var pos=CARDS.map(function(c){return[c.offsetLeft,c.offsetTop]});
+CARDS.forEach(function(c){var m=ok(+c.dataset.i);if(m)n++;c.classList.toggle('dim',any&&!m)});
+CARDS.slice().sort(function(a,b){return(ok(+a.dataset.i)?0:1)-(ok(+b.dataset.i)?0:1)||a.dataset.i-b.dataset.i}).forEach(function(c){$('#grid').appendChild(c)});
+$('#dirs').classList.toggle('has',SD!==null);
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)CARDS.forEach(function(c,k){var dx=pos[k][0]-c.offsetLeft,dy=pos[k][1]-c.offsetTop;if((dx||dy)&&c.animate)c.animate({translate:[dx+'px '+dy+'px','0 0']},{duration:480,easing:'cubic-bezier(.2,.8,.2,1)'})});
+$('#cnt').textContent=!any?'':(n?'符合 '+n+' 條,排在最前面':'這個組合沒有符合的路線,換一個試試。');
+$('#clr').hidden=!any;
+if(sc&&any){var t=$('#rs').getBoundingClientRect().top;if(t>innerHeight*.7)window.scrollBy({top:t-innerHeight*.5,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})}}
+$('#dirs').onclick=function(e){var b=e.target.closest('.dir');if(!b)return;var g=+b.dataset.g;SD=SD===g?null:g;upd(SD!==null)};
+$('#chips').onclick=function(e){var b=e.target.closest('button');if(!b)return;var f=F[[].indexOf.call($('#chips').children,b)];SO=SO===f?null:f;upd(SO!==null)};
+$('#clr').onclick=function(){SD=null;SO=null;upd(false)};
+upd(false,true);
+function open(i){cur=(i+R.length)%R.length;var r=R[cur];CR=r;if(location.hash!=='#route-'+(cur+1))location.hash='route-'+(cur+1);$('#pn').innerHTML='<div class="ph" style="background:var(--'+r.c+')"><button class="x" aria-label="關閉">×</button><b>0'+(cur+1)+' / 09</b><h3 id="pt">'+r.n+'</h3><p>'+r.d+'</p></div><div class="pb">'+(r.dl?'<p class="dl">⏰ '+r.dl+'</p>':'')+'<h4>適合誰</h4><p style="margin:.2rem 0">'+r.w+'</p><h4>想試試看的最小一步</h4><p style="margin:.2rem 0">'+r.m+'</p><p class="nt">想知道更多,再點開下面的項目;不用一次看完。</p>'+(r.ex?sec(r.exh||'可以看看的方向',ul(r.ex)):'')+sec('步驟',ul(r.st,'ol'))+sec('時間與費用',ul(r.co))+sec('注意事項',ul(r.no))+(r.sp?sec('需要時可以使用的支持資源',ul(r.sp)):'')+(r.l.length?sec('佐證資料(內文的 [編號] 對應這裡)','<div class="lk">'+r.l.map(function(k,i){return '<a href="'+k[1]+'" target="_blank" rel="noopener">['+(i+1)+'] '+k[0]+' ↗</a>'}).join('')+'</div><p class="nt">有 [編號] 的內容都有對應來源;沒有編號的是行動建議或我的整理。部分來源是補習班、診所或新聞整理,請以官方公告為準。</p><details class="how"><summary>連結打不開,或想自己查其他資料?</summary><ul><li>連結失效時:把來源的標題(例如「產業新尖兵計畫」)貼到 Google 搜尋;或把網址刪到只剩網站首頁,再用該網站自己的搜尋框。</li><li>只在某個網站裡搜尋:在 Google 輸入「site:網站 關鍵字」,例如 site:moex.gov.tw 物理治療師 應考資格。</li><li>網址結尾是 .gov.tw 是政府機關、.edu.tw 是學校,優先看這兩種;補習班、部落格、新聞只當線索。</li><li>找法規:全國法規資料庫 law.moj.gov.tw(教育部的規定在 edu.law.moe.gov.tw);找考試:考選部 www.moex.gov.tw;找職訓:台灣就業通 www.taiwanjobs.gov.tw;找空大:www.nou.edu.tw。</li><li>查最新資訊:搜尋時加上年度,例如「115 學年度」「2026」,並看公告日期;簡章以各校招生組的公告為準。</li><li>網頁已經消失:到 web.archive.org 貼上舊網址,看有沒有存檔。</li><li>不確定就打電話問承辦單位:問「這個規定現在還有效嗎?」,並記下日期和接聽的人。</li></ul></details>'):'')+'</div><div class="pf"><button class="btn s nv" id="pv" aria-label="上一條路線" title="上一條">◀</button><button class="btn s tg" id="ao" aria-label="全部項目展開" title="全部展開">展開</button><button class="btn s pt" id="pr" aria-label="列印這一條路線" title="列印這一條">🖨️</button><button class="btn s tg" id="ac" aria-label="全部項目收合" title="全部收合">收起</button><button class="btn s nv" id="nx" aria-label="下一條路線" title="下一條">▶</button></div>';
+if(!$('#ov').classList.contains('on'))LF=document.activeElement;$('#ov').classList.add('on');$('#pn').scrollTop=0;try{$('#pn').focus({preventScroll:true})}catch(e){}$('#mup').classList.remove('on');$('#pr').onclick=function(){[].forEach.call(document.querySelectorAll('#pn details'),function(d){d.open=true});window.print()};$('#pn .x').onclick=close;$('#ao').onclick=function(){[].forEach.call(document.querySelectorAll('#pn .dt'),function(d){d.open=true})};$('#ac').onclick=function(){[].forEach.call(document.querySelectorAll('#pn .dt'),function(d){d.open=false});$('#pn').scrollTo({top:0})};$('#pv').onclick=function(){nav(-1)};$('#nx').onclick=function(){nav(1)}}
+function close(){$('#ov').classList.remove('on');if(LF&&LF.focus){try{LF.focus({preventScroll:true})}catch(e){}}LF=null;if(location.hash.indexOf('#route-')===0){try{history.replaceState(null,'',location.pathname+location.search)}catch(e){location.hash=''}}}
+$('#pn').addEventListener('scroll',function(){$('#mup').classList.toggle('on',this.scrollTop>200)});
+$('#mup').onclick=function(){$('#pn').scrollTo({top:0,behavior:'smooth'})};
+$('#tb tbody').onclick=function(e){var tr=e.target.closest('tr');if(tr)open(+tr.dataset.i)};
+$('#tb tbody').onkeydown=function(e){if(e.key==='Enter'){var tr=e.target.closest('tr');if(tr)open(+tr.dataset.i)}};
+function hc(){var m=location.hash.match(/^#route-([1-9])$/);if(m){if(!$('#ov').classList.contains('on')||cur!==+m[1]-1)open(+m[1]-1)}else $('#ov').classList.remove('on')}
+window.addEventListener('hashchange',hc);hc();
+$('#grid').onclick=function(e){var b=e.target.closest('.card');if(b)open(+b.dataset.i)};
+$('#ov').onclick=function(e){if(e.target.id==='ov')close()};
+document.onkeydown=function(e){if(e.key==='Escape')close();if($('#ov').classList.contains('on')){if(e.key==='ArrowRight')nav(1);if(e.key==='ArrowLeft')nav(-1)}};
+var up=document.getElementById('up');window.addEventListener('scroll',function(){up.classList.toggle('on',window.scrollY>400)});up.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+var fz=22;try{fz=+localStorage.getItem('fz')||22}catch(e){}
+function sf(){document.documentElement.style.fontSize=fz+'px';try{localStorage.setItem('fz',fz)}catch(e){}}sf();
+document.querySelector('.fs').onclick=function(e){var b=e.target.closest('button');if(!b)return;var s=+b.dataset.s;fz=s?Math.max(18,Math.min(34,fz+s)):22;sf()};
+</script></body></html>
